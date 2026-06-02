@@ -13,11 +13,14 @@ public class UserRegistration {
                 "^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+(\\.[a-zA-Z]{2,}){1,2}$",
                 email);
     }
+    public boolean validateMobile(String mobile) {
+        return Pattern.matches("^[0-9]{1,3}\\s[0-9]{10}$", mobile);
+    }
 
     public static void main(String[] args) {
         UserRegistration user = new UserRegistration();
 
-        System.out.println(user.validateEmail("abc.xyz@bl.co.in"));
-        System.out.println(user.validateEmail("abc@.com"));
+        System.out.println(user.validateMobile("91 9919819801"));
+        System.out.println(user.validateMobile("919919819801"));
     }
 }
