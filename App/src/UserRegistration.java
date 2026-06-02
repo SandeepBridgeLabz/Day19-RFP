@@ -20,11 +20,14 @@ public class UserRegistration {
     public boolean validatePasswordRule1(String password) {
         return Pattern.matches("^.{8,}$", password);
     }
+    public boolean validatePasswordRule2(String password) {
+        return Pattern.matches("^(?=.*[A-Z]).{8,}$", password);
+    }
 
     public static void main(String[] args) {
         UserRegistration user = new UserRegistration();
 
-        System.out.println(user.validatePasswordRule1("password"));
-        System.out.println(user.validatePasswordRule1("pass"));
+        System.out.println(user.validatePasswordRule2("Password"));
+        System.out.println(user.validatePasswordRule2("password"));
     }
 }
