@@ -32,10 +32,25 @@ public class UserRegistration {
                 password);
     }
 
+
     public static void main(String[] args) {
         UserRegistration user = new UserRegistration();
 
-        System.out.println(user.validatePasswordRule4("Password1@"));
-        System.out.println(user.validatePasswordRule4("Password1@#"));
+        String[] validEmails = {
+                "abc@yahoo.com",
+                "abc-100@yahoo.com",
+                "abc.100@yahoo.com",
+                "abc111@abc.com",
+                "abc-100@abc.net",
+                "abc.100@abc.com.au",
+                "abc@1.com",
+                "abc@gmail.com.com",
+                "abc+100@gmail.com"
+        };
+
+        for (String email : validEmails) {
+            System.out.println(email + " : " +
+                    user.validateEmail(email));
+        }
     }
 }
