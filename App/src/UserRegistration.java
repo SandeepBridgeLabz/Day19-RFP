@@ -17,10 +17,14 @@ public class UserRegistration {
         return Pattern.matches("^[0-9]{1,3}\\s[0-9]{10}$", mobile);
     }
 
+    public boolean validatePasswordRule1(String password) {
+        return Pattern.matches("^.{8,}$", password);
+    }
+
     public static void main(String[] args) {
         UserRegistration user = new UserRegistration();
 
-        System.out.println(user.validateMobile("91 9919819801"));
-        System.out.println(user.validateMobile("919919819801"));
+        System.out.println(user.validatePasswordRule1("password"));
+        System.out.println(user.validatePasswordRule1("pass"));
     }
 }
